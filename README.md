@@ -1,213 +1,320 @@
-# Comandos y Conceptos de Git
-
-Este repositorio contiene una lista de comandos y conceptos esenciales relacionados con Git, una herramienta de control de versiones ampliamente utilizada. Estos comandos y conceptos son fundamentales para trabajar de manera efectiva con Git y gestionar proyectos de desarrollo de software.
-
-## Contenido:
-
-- [Convenciones de Nombres](#convenciones-de-nombres)
-- [Buenas Prácticas](#buenas-prácticas)
-- [Consideraciones Iniciales](#consideraciones-iniciales)
-- [Comandos Básicos en la Terminal](#comandos-básicos-en-la-terminal)
-- [Comandos para Iniciar tu Repositorio con Git](#comandos-para-iniciar-tu-repositorio-con-git)
-- [Modificar/Ajustar/Eliminar la Configuración](#modificarajustareliminar-la-configuración)
-- [Clonar/Crear/Agregar](#clonarcrearagregar)
-- [Analizar Cambios en los Archivos de un Proyecto Git](#analizar-cambios-en-los-archivos-de-un-proyecto-git)
-- [Volver en el Tiempo con Branches y Checkout](#volver-en-el-tiempo-con-branches-y-checkout)
-- [Git Reset vs Git Rm / Viajes en el Tiempo](#git-reset-vs-git-rm--viajes-en-el-tiempo)
-- [Merge Fast-Forward](#merge-fast-forward)
-- [Tags (Versiones)](#tags-versiones)
-- [Stash](#stash)
-- [Rebase](#rebase)
-- [Comandos para Trabajo Remoto con Git](#comandos-para-trabajo-remoto-con-git)
-- [Posibles Warning](#posibles-warning)
-- [Recursos Adicionales](#recursos-adicionales)
-- [Curso Profesional Git GitHub by Platzi](#curso-profesional-git-github-by-platzi)
+# Configuración de Entorno de Desarrollo en Windows
 
 
-## Convenciones de Nombres
+## 💻 Descargar e instalar un navegador web: Chrome 💻
 
-- **Nombres de Ramas:** Las ramas deben nombrarse de manera descriptiva y seguir la convención snake_case. Ejemplo: `feature/nueva_funcionalidad` o `bugfix/arreglo_importante`.
+### Conceptos Básicos 🧮
 
-- **Mensajes de Commit:** Los mensajes de commit deben ser concisos y descriptivos. Utiliza un formato de mensaje que comienza con un verbo en tiempo presente. Ejemplo: "Agrega validación de formulario" o "Corrige error de sintaxis en el archivo X".
+#### Navegador 🌎
+ 
+El navegador web (en inglés: web browser) es un software que permite al usuario acceder a sitios web y visualizarlos. También conocido como navegador de internet, su nombre más común es simplemente “navegador”. En sus inicios, los navegadores web se utilizaban solamente para localizar y mostrar contenido de internet, pero con su evolución y la de los sitios web, se han convertido en herramientas potentes para realizar todo tipo de actividades que antes estaban solamente restringidas al entorno local de un computador. Además, se encuentran disponibles actualmente para todo tipo de dispositivos, como computadores, teléfonos, tablets e incluso televisores inteligentes.
 
-- **Archivos y Carpetas:** Asigna nombres descriptivos a los archivos y carpetas. Evita caracteres especiales y espacios en los nombres de archivos. Utiliza guiones bajos o guiones para separar palabras. Ejemplo: `mi_archivo_importante.js`.
 
-## Buenas Prácticas
+### ¿Cómo funcionan los navegadores web? 🕹
+ 
+Cuando ingresas una URL o dirección del sitio web (por ejemplo: platzi.com), este programa se encarga de localizar el servidor correspondiente a esa dirección y enviarle una solicitud mediante el Protocolo de Transferencia de Hipertexto (HTTP). El servidor envía la respuesta y el navegador convierte este código en un sitio web entendible para el usuario.
+Para presentar el contenido de forma visual, el navegador se vale del lenguaje de marcado de hipertexto (HTML) y el lenguaje de estilo en cascadas (CSS), que dan un estilo visual a la información que se presentará en el navegador mediante etiquetas. Para que el usuario pueda interactuar con el contenido que se presenta en el sitio web, usualmente se utiliza el lenguaje de JavaScript, que se encarga de manejar toda esta interacción en su código y enviarla de vuelta al servidor.
 
-- **Frecuencia de Commits:** Realiza commits regularmente y en porciones lógicas. No acumules cambios en un solo commit. Esto facilita el seguimiento de la historia del proyecto.
+Los navegadores también tienen la capacidad de mostrar otros protocolos y prefijos, como HTTPS, que es HTTP seguro (el estándar utilizado prácticamente en todos los sitios web actualmente), el Protocolo de Transferencia de Archivos (FTP), la gestión del correo electrónico (mailto) y los archivos (file).
+ 
+Además, la mayoría de los navegadores también admiten los complementos externos necesarios para mostrar contenidos activos, como vídeos, audio, archivos PDF y juegos dentro de la página.
 
-- **Pull Requests (Solicitudes de Fusión):** Cuando trabajes en una nueva función o solución a un problema, crea una rama separada y abre un Pull Request para revisión. Esto permite una revisión y colaboración más efectiva.
 
-- **Comentarios en Código:** Incluye comentarios significativos en el código cuando sea necesario para explicar la lógica o la intención detrás de una sección de código.
+## Manejo básico de las DevTools
 
-- **Documentación:** Siempre que sea posible, proporciona documentación clara para el proyecto, incluyendo cómo instalarlo, cómo contribuir y cómo usarlo.
+### Usando DevTools de los navegadores 🪛
 
-## Consideraciones Iniciales
 
-- **Instalar Git Bash:** Configura Git Bash en tu entorno.
-- **Configurar el Entorno:** Ajusta la configuración de Git para tu proyecto.
-- **Configuración del Archivo .gitignore:** Especifica exclusiones según las necesidades del proyecto.
-- **Inicializar el Ambiente Local:** Crea un repositorio Git local.
-- **Configurar las Ramas:** Se recomienda tener las ramas master, release y develop.
-- **Rama Master (Producción):** La rama principal del proyecto.
-- **Rama Release (Pruebas):** Utilizada solo para detectar bugs.
-- **Rama Develop (Desarrollo):** Se crean ramas por atributos.
+#### ¿En qué idioma deberíamos de tener configurado nuestro computador y por qué? 🆗
+ 
+- Deberíamos de tener nuestro computador configurado en inglés ya que la industria del desarrollo web gira en este idioma.
 
-## Comandos Básicos en la Terminal
+#### ¿En dónde podemos descargar las DevTools de Microsoft Edge? ❓
+ 
+- En la Microsoft Store.
 
-- **`pwd`:** Muestra la ruta actual de carpetas.
-- **`mkdir`:** Permite crear carpetas (por ejemplo, `mkdir Carpeta-Importante`).
-- **`touch`:** Crea archivos (por ejemplo, `touch archivo.txt`).
-- **`rm`:** Borra un archivo o carpeta.
-- **`cat`:** Muestra el contenido de un archivo (por ejemplo, `cat nombre-archivo.txt`).
-- **`ls`:** Lista los archivos en la carpeta actual.
-- **`ls -a`:** Lista todos los archivos, incluso los ocultos.
-- **`ls -l`:** Muestra la lista de archivos con detalles.
-- **`ls -la`:** Lista los archivos con detalles, incluyendo los ocultos.
-- **`cd`:** Navega entre carpetas.
-- **`cd /`:** Navega a la ruta principal.
-- **`cd` o `cd ~`:** Navega a la ruta de tu usuario.
-- **`cd carpeta/subcarpeta`:** Navega a una subcarpeta desde la carpeta actual.
-- **`cd ..`:** Retrocede una carpeta.
-- **`history`:** Visualiza los comandos previamente ejecutados.
-- **`! + número`:** Ejecuta un comando usando su número de historial (por ejemplo, `!72`).
-- **`clear`:** Limpia la terminal.
+#### ¿Qué es Microsoft Edge DevTools? 🔵
+ 
+- El explorador Microsoft Edge incluye herramientas de desarrollo web integradas, denominadas Microsoft Edge DevTools. DevTools es un conjunto de herramientas de desarrollo web que aparece junto a una página web representada en el explorador. Fuente: aquí 
 
-**Nota:** En Windows, el terminal no distingue entre mayúsculas y minúsculas, pero en Linux y UNIX sí.
+#### ¿Cómo accedemos a las DevTools de Google Chrome? 🟡
+ 
+- F12
+- CTRL + Shift + I
+- Clic derecho -> Inspeccionar
+ 
+#### ¿Cómo instalar extensiones en Google Chrome?
+ 
+- Dar click a los 3 puntos alineados en forma vertical (están en la esquina superior derecha del navegador), aparece un menú al lado izquierdo, desplazar hasta abajo y seleccionar a Extensiones.
+ 
+- Se puede buscar las extensiones cuado se da click al recuadro de líneas horizontales (esquina superior izquierda) y dar click en Abrir Chrome Web Store, aparece otra página y en el cuadro del buscador se puede poner por ejemplo Lighthouse (Google Lighthouse es una herramienta automatizada de código abierto para medir la calidad de las páginas web, fuente: aquí), seleccionar entre los resultados el que queremos instalar, luego dar en el botón azul que dice Agregar a Chrome, aparece un cuadro de dialogo y hay que confirmar la instalación, esperar y listo.
 
-## Comandos para Iniciar tu Repositorio con Git
+#### ¿Con cuales Navegadores deberíamos de quedarnos para desarrollar web? ☯
+ 
+- Google Chrome Dev.
+- Firefox Developer Edition. 
 
-- **`git init`:** Crea un repositorio local.
-- **`git config --global user.name "Usuario"`:** Configura el nombre de usuario.
-- **`git config --global user.email "Correo@correo.com"`:** Configura la dirección de correo electrónico.
-- **`git config --global -e`:** Sale de la consola con `:q` y Enter para validar la configuración del usuario y correo.
-- **`git status`:** Verifica el estado actual del repositorio.
-- **`git config`:** Muestra las posibles configuraciones.
-- **`git config --list`:** Lista las configuraciones existentes.
-- **`git config --list --show-origin`:** Muestra las configuraciones y sus rutas.
+#### ¿Cómo hacer un Shortcut? ✂
+ 
+- Presonar teclas Windows + Mayús + S
 
-## Modificar/Ajustar/Eliminar la Configuración
 
-- **`git config --global --replace-all user.name "nombre"`:** Modifica el nombre del usuario.
-- **`git config --global --unset-all user.name`:** Elimina el nombre del usuario.
-- **`git config --global --add user.name`:** Agrega el nombre.
+## Instalar VSCode 🪛
+ 
 
-## Clonar/Crear/Agregar
+### IDE 📓
+ 
+Un IDE (Integrated Development Environment) representa un entorno de desarrollo integrado, un ambiente en donde puedes programar. Este IDE trae consigo herramientas que ayudan al desarrollador, como: debugger (depurador), consola, GIT, inteligencia (la cual te ayuda a corregir la sintaxis cuando estás escribiendo código), etc.
+ 
+Lo que hace ser código al código es la sintaxis y el formato del archivo (.js , .css) etc.
+ 
+Existen diferentes tipos de IDE, como por ejemplo:
+ 
+- Visual Studio Code: “Edición de código redefinida”, es totalmente gratuito, está construido encima de open source, es decir que es de código libre y se ejecuta o corre en cualquier sistema operativo. Es muy versátil y puede servir con muchos lenguajes de programación.
+ 
+- WebStorm: Se venden a sí mismos como “El IDE más inteligente para JavaScript”.
+ 
+- Eclipse: es un IDE para el desarrollo de Java, sin embargo, admite varios lenguajes como C / C ++, PHP, ColdFusion, Python, Scala y la plataforma Android. Fue desarrollado en Java y sigue el modelo de código abierto.
+ 
+- Atom: se venden a sí mismos como “El editor de texto hackeable”, es decir que nos dejan construir herramientas, modificarlo, hacerle variaciones a su código para adaptarse a lo que necesitamos.
+ 
+- Editor de texto: Existen editores de texto / editores de código, las cuales son herramientas más minimalistas donde puedes programar pero con ciertos límites. Como el Bloc de Notas.
+ 
+```sh
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Página ejemplo</title>
+	</head>
+</html>
+``` 
 
-- **`git clone "Ruta" "Nombre"`:** Clona el repositorio completo.
-- **`git clone -b "Nombre Rama" "Ruta.git"`:** Clona solo una rama.
-- **`git branch`:** Identifica la rama actual.
-- **`git checkout -b "Nombre Rama"`:** Crea una nueva rama.
-- **`git checkout -b feature/sum`:** Crea un atributo.
-- **`git checkout develop`:** Cambia a la rama "develop".
-- **`git checkout --.`:** Recupera todo hasta el último commit.
-- **`git checkout "Men commit"`:** Vuelve a la versión anterior.
-- **`git add -A`, `git add .`, `git add --all`:** Agrega los últimos cambios.
-- **`git add "*.txt"`:** Agrega todos los archivos .txt en todo el proyecto.
-- **`git add *.txt`:** Agrega todos los archivos .txt en el directorio actual.
-- **`git add 'Lista archivos'`:** Agrega los archivos que se listan.
-- **`git add pdfs/*.pdf`:** Agrega todos los archivos PDF en la carpeta "pdfs".
-- **`git add pdfs/`:** Agrega todo el contenido dentro de la carpeta "pdfs".
+## Extensiones de VSCode 🪄
 
-## Analizar Cambios en los Archivos de un Proyecto Git
+Extensiones y personalización de Visual Studio Code 💇‍♀
 
-- **`git log`:** Historial de commits.
-- **`git log --oneline`:** Forma reducida de los commits.
-- **`git log --oneline --decorate --all --graph`:** Muestra toda la historia del repositorio de manera gráfica y embellecida.
-- **`git log --stat`:** Muestra la cantidad de bytes añadidos y eliminados en cada archivo modificado.
-- **`git show filename`:** Permite ver la historia de los cambios en un archivo.
-- **`git diff`:** Muestra las modificaciones realizadas.
-- **`git diff --staged`:** Muestra las diferencias entre los archivos en el área de preparación y el último commit.
+### ¿Cuál es el atajo de teclado para abrir el menú de extensiones en VSC? ⌨
+ 
+- CRTL + Shift + I
+ 
+### ¿Cuál es el atajo de teclado para guardar un archivo en VSC? ⌨
+ 
+- CRTL + S 
 
-## Volver en el Tiempo con Branches y Checkout
+### ¿Cómo realizar una búsqueda de palabras en VSC? 🔍
+ 
+- VSC puede usar el mismo comando para buscar, con Ctrl + F te habilita la búsqueda.
+ 
+- Además hay algunos plug-ins para realizar búsquedas más avanzadas.
 
-- **`git checkout`:** Permite regresar al estado en el cual se realizó un commit o branch específico.
-- **`git checkout --`:** Deshace cambios en un archivo en estado "modified" (que no fue agregado al área de preparación).
-- **`git checkout --.`:** Recupera todo hasta el último commit.
-- **`git checkout "Nombre archivo"`:** Revierte cambios en un archivo específico.
-- **`git commit -am "Mensaje"`:** Agrega los cambios y realiza un commit.
-- **`git commit --amend -m "Mensaje"`:** Modifica un commit.
+### ¿Cómo llamamos a nuestro primer archivo HTML? 🔎
+ 
+- index.html 
 
-## Git Reset vs Git Rm / Viajes en el Tiempo
+### ¿Desde dónde deberíamos crear un proyecto web? 📲
+ 
+- Desde nuestro editor de código. 
 
-- **`git reset --mixed "commit Id"`:** Regresa en el tiempo a un ID específico.
-- **`git reset --hard "commit Id"`:** Regresa a un commit eliminado o perdido.
-- **`git reset --hard "commit Id"`:** Restaura todo forzadamente.
-- **`git reset --soft`:** Vuelve el branch al estado del commit especificado.
-- **`git reset --hard`:** Borra absolutamente todo.
-- **`git reset --soft HEAD^`:** Modifica cambios dentro del mismo commit.
-- **`git reset --soft/hard`:** Regresa al commit especificado, eliminando todos los cambios realizados después de ese commit.
-- **`git reflog`:** Revisa commits eliminados o perdidos.
-- **`git fetch`:** Compara la nube y tu repositorio local.
-- **`git rm --cached`:** Elimina los archivos del área de preparación y del próximo commit, pero los mantiene en tu disco duro.
-- **`git rm --force`:** Elimina los archivos de Git y del disco duro.
-- **`git rm --cached "nombre_del_archivo.txt"`:** Elimina el archivo del área de preparación (staging).
-- **`git rm "nombre_del_archivo.txt"`:** Elimina el archivo del repositorio.
+### ¿Por qué debemos crear un proyecto web desde el editor de código y no desde Windows? ❔❓
+ 
+- Porque si nuestro Windows no está configurado para mostrar las extensiones de los archivos, estos aparecerán con una extensión .txt y deberemos renombrarlos. 
 
-## Merge Fast-Forward
+### Extensiones de VSC 🧰
 
-- **`git branch`:** Valida las ramas actuales.
-- **`git checkout master`:** Cambia a la rama requerida.
-- **`git diff ramavalidar master`:** Compara ramas.
-- **`git merge "rama"`:** Realiza el merge de ramas (Fast-Forward).
-- **`git branch -d "rama"`:** Elimina una rama.
+#### Extensión Auto Rename Tag
+ 
+- Esta extensión nos ayuda a renombrar la pareja de una etiqueta cuando estemos cambiando estemos cambiando el nombre de una de las parejas. 
 
-## Git Tags (Versiones)
+#### Extensión Better Comments
+ 
+- Pinta de distintos colores tus comentarios según su tipo de acuerdo a como hayas empezado tu comentario, los categoriza en alertas, queries, TODO’s, importantes y puedes personalizar estas categorías o sus colores. 
 
-- **`git tag`:** Ver los tags del proyecto.
-- **`git tag "nombretag"`:** Crea un nuevo tag.
-- **`git tag -d "nombretag"`:** Elimina un tag.
+#### Extensión Bracket Pair Colorizer
+ 
+- Ésta les pinta los brakets que abren y cierran funciones, así, pueden darse cuenta si les falta algo por cerrar. 
 
-## Git Stash
+#### Extensión Code Spell Checker
+ 
+- Es una herramienta que sirve como corrector ortográfico del código fuente. 
 
-- **`git stash list`:** Lista los stash actuales.
-- **`git stash`:** Guarda el proyecto en un repositorio de emergencia con el último commit.
-- **`git stash pop`:** Regresa los cambios de stash al repositorio y elimina el stash.
-- **`git stash drop`:** Elimina el stash.
-- **`git stash apply`:** Restaura lo que hay en el stash.
-- **`git stash apply stash@{1}`:** Restaura un stash en específico.
-- **`git stash drop stash@{1}`:** Elimina un stash en específico.
-- **`git stash list --start`:** Lista con más información del stash.
-- **`git show stash`:** Otra forma de listar los stash.
+#### Extensión Color Highlight
 
-## Git Rebase
+- Esta extensión nos ayudara a detectar los coleres que vayamos implementando en nuestro sitio web. Esto lo hace dibujando un recuadro al código hexadecimal del mismo color que especificamos. Muestra los colores en .css para verlos. 
 
-- **`git checkout rama`.**
-- **`git rebase master`:** Crea un área temporal de los commits de la rama.
-- **`git rebase -i HEAD~4`:** Une varios commits (lista los últimos 4 commits).
+#### Extensión Color Picker
+ 
+- Genera códigos de color como notaciones de color CSS.
 
-## Comandos para Trabajo Remoto con Git
+#### Extensión CSS Flexbox Cheatsheet</h5>
+ 
+• Permite ver en una hoja los tipos de flexbox y las posiciones que puede tomar.
+ 
 
-- **`git clone "url_del_servidor_remoto"`:** Descarga los archivos y todo el historial de cambios en la carpeta .git.
-- **`git remote add origin "link.git"`:** Agrega el repositorio a GitHub.
-- **`git remote`:** Lista los repositorios remotos.
-- **`git remote -v`: Lista repositorios remotos con URLs.
-- **`git push`:** Envía los cambios al servidor remoto.
-- **`git push -u origin master`:** Realiza un push al repositorio remoto.
-- **`git push origin "feature/IncluirBI"`:** Hace un push a una rama feature.
-- **`git push --tags`:** Realiza push de tags.
-- **`git pull`:** Básicamente, git fetch y git merge al mismo tiempo.
-- **`git fetch`:** Actualiza desde el servidor remoto y guarda los cambios en el repositorio local.
-- **`git merge "feature/sum"`:** Aplica los cambios realizados en los atributos a las ramas (debes ubicarte en la rama primero).
-- **`git push --all`:** Carga el repositorio.
-- **`git origin pull develop`:** Hala los cambios colaborativos.
+<h5>Extensión CSS Grid Snippets</h5>
+ 
+• Trae un conjunto de atajos para configurar el Grid:
+◦ dg – display grid
+◦ dig – display inline-grid
+◦ gg – grid gap
+◦ gtc – grid-template-columns
+◦ gta – grid-template-areas
+ 
 
-## Posibles Warning
+<h5>Extensión CSS Peek</h5>
+ 
+• Para que puedas echar un vistazo a los estilos CSS de cada clase, id o etiqueta HTML.
+ 
 
-- **`git add -A`** (se corrige con **`git config core.autocrlf true`**).
+<h5>Extensión ESLint</h5>
+ 
+Sirve para filtrar código TypeScript o JavaScript con el objetivo de escribir un código más óptimo y limpio.
+ 
 
-## Recursos Adicionales
+<h5>Extensión GitLens</h5>
+ 
+• Les dará todas las herramientas de git para tener un mejor orden y llevar mejor el flujo de desarrollo.
+ 
 
-- [Versionamiento Semántico](https://semver.org/lang/es/)
-- [Video GitFlow](https://drive.google.com/drive/folders/1JJiHAjG720fwGfbWmBK8PID9MqYXSWJE?usp=sharing)
-- [Resolución de Problemas Comunes con Git](/info/resolucion_problemas_git.md)
+<h5>Extensión Highlight Matching Tag</h5>
+ 
+Resalta las etiquetas de apertura y/o cierre. Opcionalmente, también muestra la ruta a la etiqueta en la barra de estado.
+ 
 
-## Curso Profesional Git GitHub by Platzi
+<h5>Extensión Icon Material Theme</h5>
+ 
+• Nos permite agregar un icono distintivo a los archivos para poder identificarnos.
+ 
 
-- [1. Curso Profesional Git GitHub Platzi](/docs/Curso_Profesional_Git_GitHub.pdf)
-- [2. Curso Profesional Git GitHub Platzi](/docs/Curso_Profesional_Git_GitHub_2.pdf)
+<h5>Extensión Indent-rainbown</h5>
+ 
+• Es para orientarnos en las indentaciones y no confundirnos al indentar u ordenar nuestro código.
+ 
 
-# En Resumen
-Este repositorio es una referencia útil para cualquier persona que trabaje con Git y necesite comprender y utilizar estos comandos y conceptos de manera efectiva en su trabajo diario.
+<h5>Extensión Live Server</h5>
+ 
+• Esta extensión nos ayudara a actualizar automáticamente la página en donde estamos viendo cómo va quedando nuestro sitio web. Esto lo hacemos con el fin de no refrescar la página cada vez que hagamos un cambio en el código de manera manual.
+ 
 
-¡Esperamos que esta guía sea de utilidad para tu desarrollo con Git!
+<h5>Extensión Material Icon Theme</h5>
+ 
+• Nos permite cambiar el estilo de algunos íconos de acuerdo con el tipo de archivo. Para activarlo, presionamos las tecla Ctrl + Shift + p y al salir el cuadro ingresamos: Material Icon Theme, al seeccionarlo se activa la extensión.
+ 
+
+<h5>Extensión Node Require</h5>
+ 
+• Nos indica automáticamente qué módulos de nodejs nos hace falta y tener menor errores posibles por no instalar o importar los paquetes necesarios.
+ 
+
+<h5>Extensión Path Intellisense</h5>
+ 
+• Esta extensión nos ayudara a autocompletar las rutas de los archivos que necesitemos en nuestro sitio web.
+ 
+
+<h5>Extensión Polacode</h5>
+ 
+Que genera bonitas screenshots de tu código.
+ 
+
+<h5>Extensión Prettier</h5>
+ 
+• Nos ayuda a identar nuestro código para que sea más legible. Mejora como se visualiza el código y ayuda a que sea más legible.
+ 
+
+<h5>Extensión Project Dashboard</h5>
+ 
+• Te permite organizar tus proyectos por grupos en un dashboard visualmente simple y personalizable.
+ 
+
+<h5>Extensión Settings Sync</h5>
+ 
+• Ésta sirve para guardar de forma automática su configuración de VSC en su cuenta de github, de esta forma pueden usar VSC en diferentes computadoras sin tener que preocuparse de tener que actualizar su configuración en cada pc.
+ 
+
+<h5>Extensión Todo Tree</h5>
+ 
+• Que filtra todos los comentarios que comiencen con TODO o con FIXME y los muestra en una vista de árbol, desde el que puedes acceder fácilmente a visualizar donde están tus pendientes.
+ 
+
+<h5>Extensión Trailing Spaces</h5>
+ 
+• Con esta extensión se resaltarán todos los espacios de más que se te pueden ir al final de una línea. Aunque también puedes habilitar esta funcionalidad directamente en las configuraciones de VSC.
+ 
+
+<h5>Extensión Turbo Console Log</h5>
+ 
+• Ésta extensión te permite que seleccionando tu variable y con un solo atajo de teclado, generes un línea de console.log con un mensaje significativo y más entendible a la hora de debuggear o examinar tus variables.
+ 
+
+<h5>Extensión WSL</h5>
+ 
+• Le permite usar el Subsistema de Windows para Linux (WSL) como su entorno de desarrollo de tiempo completo directamente desde VSC.
+ 
+
+<h5>Listado de extensiones para PHP</h5>
+ 
+• Laravel Extension Pack
+• Laravel Blade Snippets
+• Laravel 5 Snippets
+• PHP Itellisense
+• PHP Formatter
+• PHP IntelliSense -> completa los path de los use
+• PHP PHP Intelephense -> completa los path de los use
+• Vetur -> Para ver las plantillas .VUE
+• Beautify Blade
+ 
+
+<h5>Listado para Agilidad al codificar</h5>
+ 
+• AutoFileName
+• FileNameComplete
+• Auto Close Tag
+• Auto Rename Tag
+• seti-icons y vscode-icons
+• Duplicate selection or line
+• Git Graph
+• Material Icon Theme
+• Color Highlight
+• Bracket Pair Colorizer
+• Tailwind CSS IntelliSense
+• shell-format
+• HTML Snippets
+• Salesforce Docum -> SFDoc -> Para documentar tu codigo
+• CODESNAP -> Tomar Fotos de tu codigo
+• Live Server
+ 
+
+<h5>Listado Para JS</h5>
+ 
+• indent-rainbow
+• Color Highlight -
+• Path Intellisense -
+• Auto Rename Tag -
+• Material Icon Theme -
+• Prettier - Code formatter -
+• vscode-icons -
+• Bracket Pair Colorizer
+• Babel
+• npm intellinsense
+• typeScript import
+• Simple React Snippets
+ 
+
+¿Cómo usar Live Server en proyectos reales de HTML y CSS? 🎥
+ 
+
+Los pasos son: 📝
+ 
+• Creamos una carpeta para nuestro proyecto.
+• Damos clic derecho y abrimos Visual Studio Code.
+• En caso no poder hacer el paso anterior, esto se configura durante al instalación, entonces abrimos VSC y arrastramos nuestra carpeta al editor.
+• Desde el VSC creamos los archivos index.html ( se nombra de esta forma al primer archivo html del proyecto) y un archivo basic.css.
+• Si lo creas desde la carpeta en Windows se va a crear con la extensión de archivo .txt (pues lo estamos creando como un archivo de block de notas, de texto plano).
+• De no haber instalado la extensión Live Server, se instala presionando las teclas Ctrl + Shift + x y luego buscarla. Luego instalar y esperar.
+• Una vez instalada, buscamos Go Live en la esquina inferior derecha.
+• Permitimos el acceso de salir algún cuadro.
+• Se abrirá una pestaña en nuestro navegador con nuestro sitio.
+• Si hacemos un cambio en el código y guardamos nuestro sitio se va a recargar solo sin necesidad de abrir de nuevo el navegador.
+
+
+## Fuentes Adicionales
+[Markdown](https://platzi.com/tutoriales/1344-storytelling-2018/6430-escribe-historias-geniales-con-markdown/)
