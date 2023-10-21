@@ -41,3 +41,11 @@ Si has trabajado en la rama equivocada y deseas cambiar a otra rama:
 Estos son solo algunos de los problemas comunes que los desarrolladores pueden enfrentar al usar Git. La resolución de problemas en Git es una habilidad esencial en el desarrollo de software, y conocer estas soluciones puede ayudarte a mantener un flujo de trabajo más efectivo.
 
 Si experimentas problemas adicionales, no dudes en buscar ayuda en la comunidad de Git o en recursos en línea. La comunidad de Git es amigable y está dispuesta a ayudar a resolver problemas específicos.
+
+## Problema 7: Host key verification failed
+
+**Error:** Host key verification failed. fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists.
+- Agregar a GitHub a la lista de Hosts conocidos
+- `ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts`
+- `git branch -M main`
+- `git push -u origin main`
