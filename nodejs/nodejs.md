@@ -15,22 +15,14 @@ Node.js es un entorno en tiempo de ejecución multiplataforma para la capa del s
 `sudo n latest` -> Para instalar la versión más actualizada disponible, se ejecuta
 `sudo n install` + "número_de_versión" -> Para instalar una versión especifica de Node (e.g. `sudo n install 15.2.1`)
 
-Nota: en caso de que no sirva con n, se puede usar el comando nvm.
+**Nota:** En caso de que no sirva con n, se puede usar el comando nvm.
  
+## Instalar versión en específico usando el comando nvm 🔎
  
-Instalar versión en específico usando el comando nvm 🔎
+- Se puede realizar operaciones como instalar, desinstalar, cambiar de versión, etc, con Node Version Manager usando el comando nvm.
  
-Fuente: aquí
- 
-
-Se puede realizar operaciones como instalar, desinstalar, cambiar de versión, etc, con Node Version Manager usando el comando nvm.
- 
-Para instalar nvm, se debe instalar primero curl que es una herramienta que permite transferir data desde un servidor, colocar en la terminal:
-sudo apt install curl
- 
-
-Luego poner:
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+`sudo apt install curl` -> Herramienta que permite transferir data desde un servidor
+`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash`
  
 
 Se reinicia la terminal con:
