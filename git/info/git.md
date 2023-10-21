@@ -26,7 +26,6 @@ GitHub es una plataforma en la cual se puede subir los repositorios de Git a la 
 Cuando se configura la clave SSH con GitHub, ya no es necesario autenticarse introduciendo el correo y contraseña en la terminal cada vez que se hace un commit.
 
 ### Pasos para vincular la llave SSH 🔐
-
 - `ssh-keygen -t ed25519 -C` + "email_de_GitHub"  -> 
 - Dar ENTER, luego se le da ENTER de nuevo
 - Pregunta por una palabra clave que se ingresa 2 veces (no olvidar).
@@ -41,3 +40,7 @@ Cuando se configura la clave SSH con GitHub, ya no es necesario autenticarse int
 - Pegar el contenido de la llave ssh
 - Asignar un título a la llave ssh
 - Click en Add SSH key
+
+## Cambiar los proyectos HTTPS por SSH
+- [Congigurar Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+- `git remote set-url origin` + "ruta_ssh"
