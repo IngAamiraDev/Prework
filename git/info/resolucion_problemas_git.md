@@ -49,3 +49,29 @@ Si experimentas problemas adicionales, no dudes en buscar ayuda en la comunidad 
 - `ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts`
 - `git branch -M main`
 - `git push -u origin main`
+
+## Problema 8: You have divergent branches and need to specify how to reconcile them.
+**fatal:** Need to specify how to reconcile divergent branches.
+
+- Merge (Combinar): Esta es la estrategia predeterminada y realiza un merge (combinación) de las ramas divergentes, creando un nuevo commit de fusión para incorporar los cambios en ambas ramas. Puedes configurarlo con el siguiente comando:
+
+```sh
+git config pull.rebase false
+git pull origin main
+```
+
+- Rebase (Rebasar): Con esta estrategia, tus cambios locales se aplicarán uno por uno encima de los cambios remotos. Esto reorganiza la historia del proyecto y puede hacer que la línea de tiempo sea más limpia. Puedes configurarlo con el siguiente comando:
+
+```sh
+git config pull.rebase true
+git pull origin main
+```
+
+- Fast-Forward Only (Solo Avance Rápido): Con esta estrategia, se permitirá solo avances rápidos, lo que significa que Git solo permitirá fusionar si no hay cambios en la rama local desde la última sincronización. Puedes configurarlo con el siguiente comando:
+
+```sh
+git config pull.ff only
+git pull origin main
+```
+
+**Nota:** Elige la estrategia que mejor se adapte a tus necesidades y configúrala usando uno de los comandos mencionados anteriormente. Luego, vuelve a ejecutar git pull para traer los cambios y reconciliar las ramas de acuerdo con la estrategia seleccionada.
