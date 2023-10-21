@@ -31,6 +31,7 @@
 - Ejecutar PowerShell como administrador
 - `wsl -l -v` -> Para saber la versión de Ubuntu a instalar
 - `wsl –install` -> Instalar todos los elementos necesarios de forma automática
+- `wsl.exe --install Ubuntu` -> Otra opción en caso de no funcionar la anterior
 - Reiniciar la máquina
 
 ## Instalar alguna versión en particular
