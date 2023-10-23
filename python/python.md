@@ -24,7 +24,7 @@ Python es un lenguaje de alto nivel de programación interpretado cuya filosofí
 - `sudo apt install -y python3-venv` -> Para instalar el entorno virtual
 - `python3 -m venv env` -> Poner cada proyecto en su propio ambiente, se debe entrar en cada carpeta para crear el ambiente
 - `source env/bin/activate` -> Activar el ambiente
-- `alias avenv=source env/bin/activate` -> Crear un alias para activar el ambiente
+- `alias avenv="source env/bin/activate"` -> Crear un alias para activar el ambiente
 - `deactivate` -> Salir del ambiente virtual
 - `pip3 install` ... -> Instalar las librerias necesarias en el ambiente virtual (e.g. pip3 install matplotlib==3.5.0)
 - `pip3 freeze` -> Verificar las instalaciones
