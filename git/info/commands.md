@@ -195,19 +195,3 @@ Este repositorio contiene una lista de comandos y conceptos esenciales relaciona
 ## Posibles Warning
 
 - **`git add -A`** (se corrige con **`git config core.autocrlf true`**).
-
-## Recursos Adicionales
-
-- [Versionamiento Semántico](https://semver.org/lang/es/)
-- [Video GitFlow](https://drive.google.com/drive/folders/1JJiHAjG720fwGfbWmBK8PID9MqYXSWJE?usp=sharing)
-- [Resolución de Problemas Comunes con Git](/git/info/resolucion_problemas_git.md)
-
-## Curso Profesional Git GitHub by Platzi
-
-- [1. Curso Profesional Git GitHub Platzi](/git/docs/Curso_Profesional_Git_GitHub.pdf)
-- [2. Curso Profesional Git GitHub Platzi](/git/docs/Curso_Profesional_Git_GitHub_2.pdf)
-
-# En Resumen
-Este repositorio es una referencia útil para cualquier persona que trabaje con Git y necesite comprender y utilizar estos comandos y conceptos de manera efectiva en su trabajo diario.
-
-¡Esperamos que esta guía sea de utilidad para tu desarrollo con Git!
