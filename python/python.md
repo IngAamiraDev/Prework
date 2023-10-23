@@ -18,7 +18,7 @@ Python es un lenguaje de alto nivel de programación interpretado cuya filosofí
 - `python3 -V` -> Para verificar la versión que se instaló
 
 
-## Entornos visrtuales (WSL)
+## Entornos virtuales (WSL)
 - `which python3` -> Verificar donde esta python
 - `which pip3` -> Verificar donde esta pip
 - `sudo apt install -y python3-venv` -> Para instalar el entorno virtual
