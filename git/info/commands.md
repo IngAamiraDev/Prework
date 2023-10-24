@@ -181,7 +181,7 @@ Este repositorio contiene una lista de comandos y conceptos esenciales relaciona
 - **`git clone "url_del_servidor_remoto"`:** Descarga los archivos y todo el historial de cambios en la carpeta .git.
 - **`git remote add origin "link.git"`:** Agrega el repositorio a GitHub.
 - **`git remote`:** Lista los repositorios remotos.
-- **`git remote -v`: Lista repositorios remotos con URLs.
+- **`git remote -v`:** Lista repositorios remotos con URLs.
 - **`git push`:** Envía los cambios al servidor remoto.
 - **`git push -u origin master`:** Realiza un push al repositorio remoto.
 - **`git push origin "feature/IncluirBI"`:** Hace un push a una rama feature.
