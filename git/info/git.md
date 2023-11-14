@@ -61,7 +61,7 @@ GitHub es una plataforma en la cual se pueden subir los repositorios de Git a la
 ### 4.5 ¿Para qué sirve el comando `git commit -m "mensaje"`? <a name="45-para-qué-sirve-el-comando-git-commit-m-mensaje"></a>
 - Para crear un commit. Esto es lo que nos permite crear dentro de Git una versión de nuestro proyecto. La bandera o flag -m nos permite agregar un mensaje descriptivo para saber qué cambio hicimos en el proyecto.
 
-### 4.6 ¿Para qué nos sirve el comando `git config --global user. name "nombre"`? <a name="46-para-qué-nos-sirve-el-comando-git-config-global-user-name-nombre"></a>
+### 4.6 ¿Para qué nos sirve el comando `git config --global user.name "nombre"`? <a name="46-para-qué-nos-sirve-el-comando-git-config-global-user-name-nombre"></a>
 - Nos permite agregar un nombre de usuario a Git.
 
 ### 4.7 ¿Para qué nos sirve el comando `git config --global user.email "correo electrónico"`? <a name="47-para-qué-nos-sirve-el-comando-git-config-global-useremail-correo-electronico"></a>
