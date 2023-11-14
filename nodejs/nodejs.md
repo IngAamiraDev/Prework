@@ -30,7 +30,7 @@ Asegurémonos de que Node.js esté instalado en tu sistema y configuremos el ent
 ## 4. Instalar paquetes de actualización <a name="instalar-paquetes-de-actualización"></a>
 - `sudo apt install npm` -> Instala el manejador de paquetes de Node: npm 📥 
 - `sudo npm install -g n` -> Se instala el paquete n que permite administrar las versiones de Node
-- `sudo n latest` -> Para instalar la versión más actualizada disponible, se ejecuta
+- `sudo n latest` -> Para instalar la versión más actualizada disponible
 - `sudo n install` + "número_de_versión" -> Para instalar una versión específica de Node (e.g. `sudo n install 15.2.1`)
 
 ## 5. Instalar versión en específico usando el comando nvm <a name="instalar-versión-en-específico-usando-el-comando-nvm"></a>
