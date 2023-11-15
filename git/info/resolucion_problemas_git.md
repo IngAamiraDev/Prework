@@ -75,3 +75,43 @@ git pull origin main
 ```
 
 **Nota:** Elige la estrategia que mejor se adapte a tus necesidades y configúrala usando uno de los comandos mencionados anteriormente. Luego, vuelve a ejecutar git pull para traer los cambios y reconciliar las ramas de acuerdo con la estrategia seleccionada.
+
+
+## Problema 9: failed to push some refs to github.com(...)
+
+1. Realizar un Pull para Sincronizar:
+    - `git pull origin main` -> Este comando traerá los cambios desde la rama remota "main" y fusionará esos cambios con tu rama local "main". Si hay conflictos, Git te pedirá que los resuelvas.
+
+2. Resolver Conflictos (si es necesario):
+    - Si hay conflictos durante el paso anterior, Git te mostrará los archivos en conflicto. Deberás abrir esos archivos, resolver los conflictos manualmente, y luego hacer un commit para confirmar las resoluciones.
+
+3. Realizar un Push después de Sincronizar:
+    - Después de sincronizar y resolver conflictos (si los hay), puedes intentar realizar el push nuevamente:
+`git push origin main` Este comando enviará tus cambios locales a la rama "main" en el repositorio remoto.
+
+4. Consideraciones:
+    - Si otros colaboradores también están trabajando en la rama "main", es posible que necesites realizar este proceso más a menudo para mantener tu rama local actualizada.
+    - Asegúrate de estar trabajando en la rama correcta (main) y de que todos los cambios locales estén comprometidos antes de realizar el pull y push.
+
+Al seguir estos pasos, deberías poder sincronizar tu rama local con la rama remota y realizar el push exitosamente. Si persisten los problemas, asegúrate de revisar los mensajes de error y cualquier indicación adicional proporcionada por Git para obtener más detalles sobre la causa del problema.
+
+
+## Problema 10: no branch, rebasing main
+Indica que actualmente te encuentras en un estado de rebasing (rebase) y no en una rama específica. Esto significa que estás en medio de un proceso de rebase en la rama main. Durante un rebase, Git está reorganizando tus cambios locales sobre la base de los cambios más recientes en la rama remota main.
+
+1. Completar el Rebase:
+    - Si Git está en medio de un rebase, puedes completarlo ejecutando: `git rebase --continue`
+    - Si hay conflictos durante el rebase, Git te pedirá que los resuelvas antes de continuar con el rebase. En ese caso, utiliza:
+    - `git rebase --skip` -> si deseas omitir los cambios en conflicto
+    - `git rebase --abort`  -> si deseas cancelar el rebase por completo
+    - Luego, vuelve a intentar el proceso de rebase desde el principio.
+
+2. Hacer Pull para Sincronizar:
+    - Después de completar el rebase, realiza un pull para asegurarte de tener los cambios más recientes de la rama remota main: `git pull origin main`
+    - Esto asegurará que estés completamente sincronizado antes de intentar el push.
+
+3. Hacer Push:
+    - Finalmente, después de completar el rebase y asegurarte de que estás sincronizado, intenta hacer push nuevamente: `git push origin main`
+    - Esto debería permitirte enviar tus cambios actualizados a la rama remota main.
+
+Recuerda que es importante tener cuidado al realizar rebase, especialmente si estás trabajando en una rama compartida con otros colaboradores. El rebase reescribe la historia del repositorio, y puede causar conflictos si otros colaboradores también han realizado cambios en la misma rama. En entornos colaborativos, la preferencia puede ser usar merge en lugar de rebase para evitar complicaciones.
