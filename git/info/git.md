@@ -110,7 +110,7 @@ Cuando se configura la clave SSH con GitHub, ya no es necesario autenticarse int
 ## 7. Cambiar los proyectos HTTPS por SSH <a name="7-cambiar-los-proyectos-https-por-ssh"></a>
 
 - [Configurar Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
-- `git remote set-url origin` + "ruta_ssh".
+- `git remote set-url origin` + "ruta_ssh" -> (e.g. `git remote set-url origin git@github.com:IngAamira/todo-app.git`)
 - `git remote -v` -> Validar que registre fetch and push.
 
 ## 8. Enviar de remoto a local <a name="8-enviar-de-remoto-a-local"></a>
