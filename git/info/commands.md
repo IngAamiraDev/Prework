@@ -53,28 +53,6 @@ Este repositorio contiene una lista de comandos y conceptos esenciales relaciona
 - **Rama Release (Pruebas):** Utilizada solo para detectar bugs.
 - **Rama Develop (Desarrollo):** Se crean ramas por atributos.
 
-## Comandos Básicos en la Terminal
-
-- **`pwd`:** Muestra la ruta actual de carpetas.
-- **`mkdir`:** Permite crear carpetas (por ejemplo, `mkdir Carpeta-Importante`).
-- **`touch`:** Crea archivos (por ejemplo, `touch archivo.txt`).
-- **`rm`:** Borra un archivo o carpeta.
-- **`cat`:** Muestra el contenido de un archivo (por ejemplo, `cat nombre-archivo.txt`).
-- **`ls`:** Lista los archivos en la carpeta actual.
-- **`ls -a`:** Lista todos los archivos, incluso los ocultos.
-- **`ls -l`:** Muestra la lista de archivos con detalles.
-- **`ls -la`:** Lista los archivos con detalles, incluyendo los ocultos.
-- **`cd`:** Navega entre carpetas.
-- **`cd /`:** Navega a la ruta principal.
-- **`cd` o `cd ~`:** Navega a la ruta de tu usuario.
-- **`cd carpeta/subcarpeta`:** Navega a una subcarpeta desde la carpeta actual.
-- **`cd ..`:** Retrocede una carpeta.
-- **`history`:** Visualiza los comandos previamente ejecutados.
-- **`! + número`:** Ejecuta un comando usando su número de historial (por ejemplo, `!72`).
-- **`clear`:** Limpia la terminal.
-
-**Nota:** En Windows, el terminal no distingue entre mayúsculas y minúsculas, pero en Linux y UNIX sí.
-
 ## Comandos para Iniciar tu Repositorio con Git
 
 - **`git init`:** Crea un repositorio local.
