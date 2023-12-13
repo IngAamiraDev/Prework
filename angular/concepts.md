@@ -3,7 +3,7 @@ Angular es un framework de desarrollo de aplicaciones web desarrollado y manteni
 
 ## Elementos básicos de Angular
 
-## División de responsabilidad
+### División de responsabilidad
 Un componente de Angular se divide en tres archivos: uno para el código TypeScript, otro para el código HTML y uno más para el código CSS.
 
 ```sh
@@ -40,12 +40,54 @@ export class AppComponent {
   private title = 'Hola! soy una variable privada';
 }
 ```
+### Componentes
+Cumplen el principio de una sola responsabilidad
 
+![Componentes](/angular/imgs/componentes.png)
 
-## Property Binding 
+#### Ciclo de vida de los componentes
+
+![Ciclo componentes](/angular/imgs/cvcomponentes.png)
+
+- **constructor:** NO ASYNC / before render / una vez.
+- **ngOnChanges:** Before and during render.
+- **ngOnInit:** After render / una vez / async, then, subs.
+- **ngDoCheck:** 
+  - **ngAfterContentInit:**
+  - **ngAfterContentChecked:**
+  - **ngAfterViewInit:** After render / hijos ya fueron pintandos.
+  - **ngAfterViewCheck:**
+- **ngOnDestroy:** Ver cuando el componente se destruye
+
+### Inputs
+Es la forma de enviar información del Padre al Hijo
+
+![Inputs](/angular/imgs/inputs.png)
+
+### Outputs
+Es la forma de enviar información del Hijo al Padre
+
+![Outputs](/angular/imgs/outputs.png)
+
+### Prop drilling / Imput drilling
+El **Prop Drilling** es una paso del desarrollo que ocurre cuando necesitamos obtener datos que están en varias capas en el **árbol de componentes**
+
+![Prop Drilling](/angular/imgs/prop-drilling.png)
+
+#### State Management
+La gestión de estados es el proceso de gestionar los estados de los controles de usuario. Ayuda a los desarrolladores a crear aplicaciones a gran escala con comunicaciones de datos intensas y, al mismo tiempo, mantener un alto rendimiento de las aplicaciones.
+
+![Stage Manager](/angular/imgs/state-management.png)
+
+## Inyección de dependencias
+![di](/angular/imgs/di.png)
+![di-1](/angular/imgs/di-1.png)
+![di-2](/angular/imgs/di-2.png)
+
+### Property Binding 
 Es la manera que dispone Angular para controlar y modificar las propiedades de los distintos elementos de HTML. Para esto, simplemente utiliza los corchetes [] para poder modificar dinámicamente ese atributo desde el controlador.
 
-### Utilidades:
+#### Utilidades:
 - El atributo src de la etiqueta `<img>` para modificar dinámicamente una imagen.
 - El atributo href de un `<a>` para modificar un enlace.
 - El atributo value de un `<input>` para autocompletar un valor de un formulario.
@@ -77,8 +119,7 @@ Puedes modificar el value de un campo de un formulario de la siguiente manera:
 
 Se imprime el valor de la propiedad empresa como valor de un `<input>` y gracias a la variable habilitado controlas la edición del campo.
 
-
-## Event Binding
+### Event Binding
 Permite controlar los eventos que suceden en estos elementos. El clic de un botón, detectar cambios en un campo, el envío de un formulario, entre otros eventos. Para esto utiliza los paréntesis () para el bindeo de la propiedad del elemento.
 
 Si tienes en tu componente:
@@ -135,8 +176,7 @@ El String Interpolation se utiliza para representar dinámicamente datos y expre
 
 Además del String Interpolation, Angular también ofrece otras formas de enlace de datos, como Property Binding (enlace de propiedades) y Event Binding (enlace de eventos), lo que permite una amplia variedad de interacciones dinámicas en las aplicaciones Angular.
 
-
-## Two way binding
+### Two way binding
 El two-way binding (enlace bidireccional) en Angular es una característica que combina el enlace de propiedades `([property])` con el enlace de eventos ((event)) en una única notación. Esto permite la actualización bidireccional automática entre la vista (plantilla HTML) y el componente TypeScript.
 
 La sintaxis del two-way binding utiliza `[(ngModel)]` y es comúnmente utilizada con elementos de formulario, como input, textarea, y select. Vamos a ver un ejemplo básico utilizando un input:
@@ -181,8 +221,7 @@ export class AppModule {}
 
 El two-way binding es una herramienta poderosa para simplificar la gestión de datos en aplicaciones Angular y es particularmente útil en formularios. Sin embargo, es importante utilizarlo con moderación, ya que un uso excesivo puede hacer que el código sea más difícil de entender. En algunos casos, es posible que prefieras utilizar enlaces de propiedades y eventos por separado para mayor claridad.
 
-
-## Atributo ngModel
+### Atributo ngModel
 El atributo ngModel permite el intercambio de datos de forma bidireccional entre el componente y la vista. Lo que suceda en el componente, se verá reflejado en la vista. Lo que se suceda en la vista, inmediatamente impactará en el componente.
 
 ```sh
@@ -210,7 +249,6 @@ export class AppModule { }
 ```
 
 De esta manera puedes importar el módulo FormsModule desde @angular/forms y agregarlo a imports para emplear la propiedad `[(ngModel)]`.
-
 
 ## Directivas con Angular
 Las directivas en Angular permiten extender el HTML con comportamientos personalizados. Angular incluye directivas integradas y permite la creación de directivas personalizadas.
@@ -248,7 +286,6 @@ En este ejemplo:
 La directiva `*ngIf` puede evaluar cualquier expresión booleana, no solo variables booleanas. Puedes utilizar expresiones más complejas para determinar si se debe mostrar u ocultar un elemento.
 
 Recuerda que cuando el valor de la condición cambia, Angular se encarga automáticamente de mostrar u ocultar el elemento asociado, y el cambio se reflejará en la interfaz de usuario. La directiva `*ngIf` es especialmente útil para gestionar la visibilidad de elementos en función de lógica condicional en tus aplicaciones Angular.
-
 
 ### *ngFor
 Al igual que con un If, Angular permite iterar un array de números, de cadenas de caracteres o de objetos usando `*ngFor`. 
@@ -306,7 +343,6 @@ El `*ngFor` crea una variable temporal llamada str (o el nombre que más te gust
 </ul>
 ```
 
-
 Cada iteración contiene una variable i con el índice que le corresponde. Iniciando desde cero, da como resultado:
 
 ```sh
@@ -319,9 +355,7 @@ Cada iteración contiene una variable i con el índice que le corresponde. Inici
 </ul>
 ```
 
-
 ## Características clave de Angular
-
 
 ### Two-Way Data Binding:
 Angular ofrece enlace de datos bidireccional, lo que significa que los cambios en el modelo afectan automáticamente a la vista y viceversa.
@@ -350,84 +384,6 @@ Angular está diseñado teniendo en cuenta la prueba desde el principio. Ofrece 
 ### CLI (Command Line Interface):
 Angular CLI es una herramienta de línea de comandos que facilita la creación, la construcción y la gestión de proyectos Angular.
 
-## Instalar y configurar Angular en WSL
-Asegurarnos de que todos los paquetes de nuestro sistema estén actualizados.
-
-- `sudo apt update` 
-- `sudo apt upgrade`
-
-## Prerequisitos
-- NodeJs
-    - [Node](/nodejs/nodejs.md)
-- NPM
-    - [NPM](/nodejs/nodejs.md)
-
-## Extensiones en VSCode
-- [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
-- [Angular files](https://marketplace.visualstudio.com/items?itemName=alexiv.vscode-angular2-files)
-- [Angular Support](https://marketplace.visualstudio.com/items?itemName=vismalietuva.vscode-angular-support)
-- [Angular 2 TypeScript Emmet](https://marketplace.visualstudio.com/items?itemName=jakethashi.vscode-angular2-emmet)
-- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [Bracket Pair Color DLW](https://marketplace.visualstudio.com/items?itemName=BracketPairColorDLW.bracket-pair-color-dlw)
-- [Bootstrap 4](https://marketplace.visualstudio.com/items?itemName=thekalinga.bootstrap4-vscode)
-
-## Instalar Angular CLI en Ubuntu
-- `node -v` -> Verifica versión de Node
-- `npm -v` -> Verifica versión de npm
-- `npm i @angular/cli -g` -> Instala el CLI de Angular
-- `ng version` -> Verificar instalación
-
-## Recrear la carpeta de node_modules
-- `cd <name-project>` -> Nos ubicamos en la carperta del proyecto
-- `npm intall` -> Agregar los módulos que se han configurado
-- `ng serve` -> Iniciar el servidor
-
-## Crear proyectos (v17) anteriores
-- `ng new <name-project> --standalone --skip-tests`
-
-## Recrear proyecto a la nueva sintaxis (v17)
-- `ng g @angular/core:control-flow`
-
-## Comandos básicos en Angular
-- `ng new <name-project>` -> Crear un nuevo proyecto
-- `ng new <name-project> --standalone=false` -> Para crear el archivo "app-module.ts"
-- `ng new todoapp --skip-tests` -> Para evitar las pruebas unitarias
-- **Nota:** Validar los pre-procesadores de CSS: (SCSS, Sass, Less)
-- `ng serve` -> Lanzar servidor de desarrollo (Dentro de la carpeta de tu proyecto)
-- `ng serve -o` -> Lanzar servidor de desarrollo + abrir navegador
-- `ng serve -o --port=` + "num-port (e.g. 3500)" -> Lanzar el servidor en un puerto especifico
-**Nota:** Si lanzamos el comando ng version desde la carpeta del proyecto podremos obtener mayor detalle de las tecnologías utilizadas.
-- `ng serve --host 0.0.0.0` -> Permitir la conexión desde otras computadoras en la misma red.
-- `ng build` -> Compila la aplicación de Angular para producción.
-- `ng test` -> Ejecuta las pruebas unitarias de la aplicación de Angular.
-- `ng lint` -> Ejecuta el linter de la aplicación de Angular para detectar problemas de estilo y buenas prácticas.
-- `ng generate <tipo> <nombre>` -> Genera un componente, servicio u otro tipo de elemento en la aplicación de Angular. (e. g. `ng g c pages/home`)
-- `ng add <paquete>` -> Instala un paquete y realiza las configuraciones necesarias para usarlo en la aplicación de Angular.
-- `ng update` -> Actualiza los paquetes de la aplicación de Angular a las últimas versiones disponibles.
-- `ng update @angular/cli` -> Actualizar la version de angular
-- `ng update @angular/core` -> Actualizar la version de angular
-- `npm cache clean` -> Limpiar el cache de npm
-
-## Bootstrap en Angular
-- `cd <name-project>` -> Nos ubicamos en la carperta del proyecto
-- `npm install bootstrap --save` -> Instalar Bootstrap (--save: se guarda en los módulos de node)
-- **Nota:** Dependiendo de la versión si es menor a 4.5.3 se requiere "jquery" y "popper"
-- `npm install jquery --save` -> Instalar Jquery
-- `npm install popper.js --save` -> Instalar Popper
-
-### Configurar el archivo angular.json para Bootstrap
-```sh
-"styles": [
-    "src/styles.css",
-    "node_modules/bootstrap/dist/css/bootstrap.min.css"
-],
-"scripts": [
-    "node_modules/jquery/dist/jquery.slim.min.js",
-    "node_modules/popper.js/dist/umd/popper.min.js",
-    "node_modules/bootstrap/dist/js/bootstrap.min.js"
-]
-```
-
 ## Nota sobre CSS, SCSS, Sass, Less
 En el contexto de Angular, CSS, SCSS, Sass y Less son diferentes preprocesadores y lenguajes de estilos que puedes utilizar para diseñar y estilizar tus aplicaciones web. Al crear un nuevo proyecto de Angular con el comando `ng new`, puedes elegir el tipo de preprocesador que deseas utilizar para los estilos. 
 
@@ -455,15 +411,15 @@ Aquí hay una breve descripción de cada uno:
 
 Cuando ejecutas el comando `ng new` para crear un nuevo proyecto de Angular, se te preguntará qué tipo de hojas de estilo deseas utilizar, y puedes seleccionar entre CSS, SCSS, Sass o Less según tus preferencias y necesidades específicas de desarrollo. La elección del preprocesador depende en gran medida de las preferencias del equipo y de las características específicas que ofrezca cada preprocesador.
 
-
 ## Server-Side Rendering (SSR)
-
 
 ## Angular Signals
 Es un sistema que rastrea de forma granular cómo y dónde se usa su estado en una aplicación, lo que permite que el marco optimice las actualizaciones de renderizado. [Signals](https://angular.dev/guide/signals#what-are-signals)
 
 ### ¿Qué son las signals?
 Una signal es un envoltorio alrededor de un valor que notifica a los consumidores interesados ​​cuando ese valor cambia. Las signals pueden contener cualquier valor, desde primitivas simples hasta estructuras de datos complejas. El valor de una signal se lee llamando a su función getter, que permite a Angular rastrear dónde se utiliza la signal. Las signals pueden ser de escritura o de sólo lectura.
+
+
 
 ## Recursos adicionales
 [35 comandos que te ayudarán en tus proyectos](https://codigoencasa.com/los-comandos-de-angular-mas-usados/)
