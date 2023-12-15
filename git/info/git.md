@@ -84,6 +84,7 @@ Cuando se configura la clave SSH con GitHub, ya no es necesario autenticarse int
 
 ### 6.1 Pasos para vincular la llave SSH por método ED25519 por WSL 🔐 <a name="61-pasos-para-vincular-la-llave-ssh-por-método-ed25519-por-wsl"></a>
 
+- `cd ~/.ssh` -> Mover a ruta principal de ssh
 - `ssh-keygen -t ed25519 -C` + "email_de_GitHub"  -> 
 - Dar ENTER, luego se le da ENTER de nuevo.
 - Pregunta por una palabra clave que se ingresa 2 veces (no olvidar).
@@ -101,11 +102,13 @@ Cuando se configura la clave SSH con GitHub, ya no es necesario autenticarse int
 
 ### 6.2 Pasos para vincular la llave SSH por método RSA por WSL 🔐 <a name="62-pasos-para-vincular-la-llave-ssh-por-método-rsa-por-wsl"></a>
 
+- `cd ~/.ssh` -> Mover a ruta principal de ssh
 - `ssh-keygen -t rsa -b 4096 -C` + "Your EMAIL".
 - **Nota:** Al activar el pw en "Passphrase", esto hará que siempre que se haga pull/push pida la misma contraseña.
 - `ssh-keygen -f ~/.ssh/id_rsa -p` -> En caso de activar pw en "Passphrase" y desactivar.
 - `eval $(ssh-agent -s)` -> Revisar el servidor de llaves que esté activo.
 - `ssh-add ~/.ssh/id_rsa` -> Agregar la llave privada a nuestro sistema o al servidor.
+- `cat id_rsa.pub` -> Imprimir el contenido de la llave pública.
 
 ## 7. Cambiar los proyectos HTTPS por SSH <a name="7-cambiar-los-proyectos-https-por-ssh"></a>
 
