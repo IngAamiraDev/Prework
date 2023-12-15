@@ -3,22 +3,31 @@
 ## Instalar PostgreSQL
 - Actualiza con los comandos `sudo apt update && sudo apt upgrade`
 - Luego de actualizado el sistema, instala postgres con el siguiente comando: `sudo apt install postgresql postgresql-contrib`
+- Seguidamente, ejecutar: `sudo apt install postgis`
 - Validar la versión instalada `psql --version`
 
 Si la instalación salió bien, en tu terminal verás esto:
 
 ![V PostgreSQL](/postgresql/imgs/v-postgresql.png)
 
+## Configurar pgAdmin
+![Config pgAdmin](/postgresql/imgs/pgAdmin.png)
 
-## Comandos básicos
+## Comandos básicos en terminal WSL
 - **`sudo service postgresql start`:** Start BD
 - **`sudo service postgresql status`:** Status BD
 - **`sudo service postgresql stop`:** Stop BD
 - **`sudo -u postgres psql`:** Start terminal
+- **`sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"`:** Update pwd user master
+
+## Comandos básicos en terminal postgres
+- **`sudo -u postgres psql`:** Start terminal
 - **`\list`:** List BD
+- **`create user ingaamira with password 'postgres';`:** Create usr
+- **`create database ecommercedb owner ingaamira;`:** Create new BD
+- **`create extension postgis;`:** Create extension
 - **`ALTER USER <name-user> WITH PASSWORD '<new-pwd>'`:** Update pwd user master
 - **`\quit`:** Quit terminal
-
 
 ## How to Uninstall PostgreSQL From Ubuntu
 
@@ -45,8 +54,8 @@ Para solucionar este problema deberás cambiar dicho puerto siguiendo estos paso
 - Cambia el número del puerto por otro disponible
 - Guarda los cambios
 
-
 ## Recursos Adicionales
 - [PostgreSQL in WSL2](https://platzi.com/tutoriales/1480-postgresql/12864-instalacion-de-postgresql-en-wsl2-y-accesos-con-pagadmin-en-windows/)
 - [Pgadmin](https://www.pgadmin.org/download/pgadmin-4-windows/)
 - [Uninstall PostgreSQL](https://www.commandprompt.com/education/how-to-uninstall-postgresql-from-ubuntu/)
+- [How to install Postgresql and Postgis in Windows 10 with WSL and Debian - Tutorial](https://www.youtube.com/watch?v=RbIc5rTZwIo)
