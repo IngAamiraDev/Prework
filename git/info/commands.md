@@ -133,7 +133,10 @@ Este repositorio contiene una lista de comandos y conceptos esenciales relaciona
 ## Git Tags (Versiones)
 
 - **`git tag`:** Ver los tags del proyecto.
-- **`git tag "nombretag"`:** Crea un nuevo tag.
+- **`git tag "name_tag"`:** Crea un nuevo tag.
+- **`git tag -a v1.0 -m 'my version 1.0'`:** Crear una etiqueta con un mensaje.
+- **`git push origin v1.0`:** Publicar un tag espesífico en remoto.
+- **`git push origin --tags`:** Publica las etiquetas masivas que aún no se han enviado al remoto.
 - **`git tag -d "nombretag"`:** Elimina un tag.
 
 ## Git Stash
@@ -173,3 +176,8 @@ Este repositorio contiene una lista de comandos y conceptos esenciales relaciona
 ## Posibles Warning
 
 - **`git add -A`** (se corrige con **`git config core.autocrlf true`**).
+
+
+## Recursos Adicionales
+
+- [Etiquetado](https://git-scm.com/book/es/v2/Fundamentos-de-Git-Etiquetado)
