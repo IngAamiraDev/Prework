@@ -57,3 +57,9 @@
 ![Run](./imgs/run.png)
 
 ![Final](./imgs/final.png)
+
+## Recursos Adicionales
+- [Deployment](https://angular.io/guide/deployment#deploy-to-github-pages)
+- [Angular CLI ghpages](https://www.npmjs.com/package/angular-cli-ghpages)
+- [Github Angular CLI ghpages](https://github.com/angular-schule/angular-cli-ghpages)
+- [Build&Deploy Angular Apps en GitHub Pages con GitHub Actions](https://medium.com/dottech/build-deploy-angular-apps-en-github-pages-con-github-actions-8213466ef8dc)
