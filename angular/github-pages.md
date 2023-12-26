@@ -34,8 +34,8 @@
   - **Save**
 
 **5.** Instalar unas dependencias de desarrollo en la carpeta del proyecto:
-    - Ejecutar `npm i del-cli --save-dev` -> Para eliminar archivos/directorios.
-    - Luego, ejecutar `npm i copyfiles --save-dev` -> Para copiar archivos/directorios.
+  - Ejecutar `npm i del-cli --save-dev` -> Para eliminar archivos/directorios.
+  - Luego, ejecutar `npm i copyfiles --save-dev` -> Para copiar archivos/directorios.
 
 **6.** Modificar el archivo **package.json**, agregar las siguientes líneas en la opción de scripts
 
