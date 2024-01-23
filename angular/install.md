@@ -2,8 +2,7 @@
 
 Asegurarnos de que todos los paquetes de nuestro sistema estén actualizados.
 
-- `sudo apt update` 
-- `sudo apt upgrade`
+- `sudo apt update & sudo apt upgrade`
 
 ## Prerequisitos
 - NodeJs
