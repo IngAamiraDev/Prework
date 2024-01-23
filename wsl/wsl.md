@@ -140,8 +140,7 @@ Asegúrate de que las siguientes opciones estén activadas:
 
 Una vez que hayas instalado WSL, ejecuta los siguientes comandos para mantener tu sistema actualizado:
 
-- `sudo apt update`
-- `sudo apt upgrade`
+- `sudo apt update && sudo apt upgrade`
 
 
 ## 10. Recursos Adicionales
