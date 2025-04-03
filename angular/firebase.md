@@ -1,5 +1,3 @@
-
-
 # Recursos Adicionales
 - [Angular Fire](https://github.com/angular/angularfire)
 - [Doc Storage](https://github.com/angular/angularfire/blob/master/docs/storage.md#cloud-storage)
