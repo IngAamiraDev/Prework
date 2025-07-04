@@ -72,3 +72,64 @@ WHERE table_schema = 'artemis_local';
 
 SET FOREIGN_KEY_CHECKS = 1;
 ```
+
+## Solución recomendada: Redirección con socat (funciona siempre)
+Esto funciona como un puente, ya que Windows y WSL2 tienen red aislada, esta solución evita todo el lío de IPs:
+
+1. Instala socat en WSL2 (si no lo tienes)
+```bash
+sudo apt update
+sudo apt install socat
+```
+2. Ejecutar socat en segundo plato
+```bash
+nohup socat TCP-LISTEN:3307,fork TCP:localhost:3306 >/dev/null 2>&1 &
+```
+3. Configurar MySQL Workbench (Windows)
+
+### Kill process socat
+`pgrep -fl "socat TCP-LISTEN:3307"`
+`sudo kill -9 <PID>`
+
+### Script de arranque de socat
+
+✅ Paso 1: Crear script de arranque de socat
+
+`nano ~/start-mysql-bridge.sh`
+
+```bash
+#!/bin/bash
+
+# Verifica si socat ya está corriendo en el puerto 3307
+if ! pgrep -f "socat TCP-LISTEN:3307" > /dev/null; then
+  echo "[socat] Iniciando redirección localhost:3307 -> localhost:3306..."
+  nohup socat TCP-LISTEN:3307,fork TCP:localhost:3306 >/dev/null 2>&1 &
+else
+  echo "[socat] Ya está corriendo."
+fi
+```
+
+* Hazlo ejecutable
+`chmod +x ~/start-mysql-bridge.sh`
+
+✅ Paso 2: Llamarlo desde `.bashrc` ó `.zshrc`
+
+* `nano ~/.bashrc`
+* `nano ~/.zshrc`
+
+⬇️ Al final del archivo, pega:
+```sh
+# Load socat for bridge to MySQL
+~/start-mysql-bridge.sh
+```
+
+✅ Paso 3: Verificar
+
+Cerrar WSL2 -> `wsl --shutdown`
+
+Se puede ver mensajes cómo:
+```bash
+[socat] Iniciando redirección localhost:3307 -> localhost:3306...
+
+[socat] Ya está corriendo.
+```
