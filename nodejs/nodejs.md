@@ -19,8 +19,7 @@ Node.js es un entorno en tiempo de ejecución multiplataforma para la capa del s
 ## 2. Instalación de Node.js <a name="instalación-de-nodejs"></a>
 Asegurémonos de que Node.js esté instalado en tu sistema y configuremos el entorno para trabajar con él.
 
-- `sudo apt update` -> Servidores de software disponibles
-- `sudo apt upgrade`
+- `sudo apt update & sudo apt upgrade`  -> Servidores de software disponibles
 - `sudo apt install nodejs` -> Instala Node.js
 - `node -v` -> Para conocer la versión de Node.js
 
@@ -42,7 +41,7 @@ Asegurémonos de que Node.js esté instalado en tu sistema y configuremos el ent
 
 ## 6. Instalar la última versión <a name="instalar-la-última-versión"></a>
 - `nvm install --lts`
-- `node` -v Se verifica la última versión instalada de Node.js:
+- `node -v` Se verifica la última versión instalada de Node.js:
 
 ## 7. Instalar una versión específica con nvm <a name="instalar-una-versión-específica-con-nvm"></a>
 - `nvm install` + "número_de_versión" -> Para instalar una versión específica (e.g. `nvm install 16.15.0`)

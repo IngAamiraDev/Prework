@@ -28,18 +28,15 @@
 - **`sudo apt update && sudo apt upgrade`:** -> Actualizar el sistema.
 
 ## Advanced commands
-- **`sudo usermod -a -G sudo <username>`:** -> To Add a User to Sudo in WSL
 - **`grep sudo /etc/group| cut -d: -f4`:** Find Users Included to Sudo
-- **`sudo usermod -a -G sudo <username>`:** To Add a User to Sudo in WSL
+- **`sudo usermod -a -G sudo <username>`:** -> To Add a User to Sudo in WSL
 - **`sudo gpasswd -d <username> sudo`:** To Remove a User from Sudo in WSL
-
 
 **Nota:** En Windows, el terminal no distingue entre mayúsculas y minúsculas, pero en Linux y UNIX sí.
 
 ## Configurar un nuevo usuario como el predeterminado en WSL
 Para esto tendrás que abrir Powershell o Cmd.exe como administrador y escribir lo siguiente:
 - `ubuntu config --default-user <name-user>`
-
 
 ## Recursos Adicionales
 - [Basic Commands](https://platzi.com/tutoriales/2042-prework-windows/11390-comandos-basicos-y-atajos-para-la-terminal-que-todo-principiante-debe-conocer/)
