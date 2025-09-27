@@ -23,7 +23,8 @@ Asegurarnos de que todos los paquetes de nuestro sistema estén actualizados.
 
 - `node -v` -> Verifica versión de Node
 - `npm -v` -> Verifica versión de npm
-- `npm i @angular/cli -g` -> Instala el CLI de Angular
+- **Note:** The Angular CLI requires a minimum Node.js version of v18.13.
+- `sudo npm i @angular/cli -g` -> Instala el CLI de Angular
 - `ng version` -> Verificar instalación
 
 ## Recrear la carpeta de node_modules

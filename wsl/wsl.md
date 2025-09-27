@@ -135,13 +135,11 @@ Asegúrate de que las siguientes opciones estén activadas:
 - Windows PowerShell 2.0
 - Windows Subsystem for Linux
 
-
 ## 9. Comandos Después de Instalar WSL Correctamente
 
 Una vez que hayas instalado WSL, ejecuta los siguientes comandos para mantener tu sistema actualizado:
 
 - `sudo apt update && sudo apt upgrade`
-
 
 ## 10. Recursos Adicionales
 
