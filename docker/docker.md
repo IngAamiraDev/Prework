@@ -6,6 +6,9 @@ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432
 ## Verifica que PostgreSQL esté funcionando:
 docker ps | grep postgres
 
+## Limpiar contenedores en estado Exited
+docker container prune
+
 # Ver logs de PostgreSQL
 docker logs some-postgres
 
@@ -20,3 +23,9 @@ docker start some-postgres
 
 ## Detener todos los Docker
 docker stop $(docker ps -q)
+
+## Eliminar un docker por su id
+docker rm <Id>
+
+## Ver Id de contenedores
+docker ps -a
