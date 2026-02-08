@@ -8,7 +8,6 @@ localstack/localstack
 
 ## Ejecutar LocalStack directamente con Docker
 docker run --rm -it -p 4566:4566 localstack/localstack
-docker run --rm -it -p 4566:4566 -v $(pwd)/localstack_data:/var/localstack localstack/localstack
 
 ## Comprobar que LocalStack está respondiendo
 curl http://localhost:4566/_localstack/health
