@@ -3,6 +3,7 @@
 # Nuevos proyectos
 - `ng new <name-project>` -> Crear un nuevo proyecto
 - `ng new <name-project> --standalone=false --skip-tests` -> Para crear el archivo "app-module.ts" y evitar archivos de pruebas
+- `ng new <name-project> --standalone --routing --style=scss --ssr=false --skip-tests` -> Para las Business Cards (*)
 - **Nota:** Validar los pre-procesadores de CSS: (SCSS, Sass, Less)
 
 # Nuevos componentes a proyectos existentes
