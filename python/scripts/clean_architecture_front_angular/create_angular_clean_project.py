@@ -19,32 +19,33 @@ STRUCTURE = {
         "use-cases": {}
     },
     "infrastructure": {
-        "api": {},
+        "datasource": {},
         "repositories": {}
     },
     "presentation": {
         "features": {
-            "components": {},
-            "facades": {},
-            "pages": {},
-            "view-models": {}
-        },
-        "shared": {
-            "components": {},
-            "services": {},
-            "types": {},
-            "utils": {}
+            "ingaamira": {
+                "components": {},
+                "facades": {},
+                "pages": {},
+                "view-models": {}
+            },
         }
+    },
+    "shared": {
+        "components": {},
+        "services": {},
+        "utils": {}
     }
 }
 
 BASE_PATH = os.path.join("src")
 
 COMPONENTS = [
-    "header",
+    "navbar",
     "footer",
     "layout",
-    "main"
+    "whatsappbutton"
 ]
 
 
@@ -120,7 +121,9 @@ def update_angular_json_assets(project_name):
     # Replace assets configuration
     assets_path["assets"] = [
         "src/favicon.ico",
-        "src/assets"
+        "src/assets",
+        "src/robots.txt",
+        "src/sitemap.xml"   
     ]
 
     # Write updated file
@@ -157,7 +160,7 @@ def main():
 
     project_name = sys.argv[1]
 
-    # 1️⃣ Create Angular project 
+    # 1️⃣ Create Angular project
     run_command([
         "ng",
         "new",
@@ -165,7 +168,6 @@ def main():
         "--standalone",
         "--routing",
         "--style=css",
-        "--ssr=false",
         "--skip-tests"
     ])
 
