@@ -66,7 +66,7 @@ Asegúrate de que tu sistema cumple con estos requisitos antes de continuar:
 Abre PowerShell como administrador y sigue estos pasos:
 
 1. Ejecuta `wsl -l -v` para saber la versión de Ubuntu a instalar.
-2. Ejecuta `wsl --install` para instalar automáticamente todos los elementos necesarios.
+2. Ejecuta `wsl --install` para instalar automáticamente todos los elementos necesarios. (Si no se instala, se debe actualizar la versión `wsl --update`)
 3. Si la opción anterior no funciona, prueba con `wsl.exe --install Ubuntu`.
 4. Reinicia la máquina.
 
@@ -134,6 +134,40 @@ Asegúrate de que las siguientes opciones estén activadas:
 - Virtual Machine Platform
 - Windows PowerShell 2.0
 - Windows Subsystem for Linux
+
+## 9. Otros comandos usados:
+
+### Cerrar WSL completamente
+```bash
+wsl --shutdown
+```
+
+### Ver distribuciones dañadas
+```bash
+wsl -l -v
+```
+
+### Eliminar distribuciones
+```bash
+wsl --unregister Ubuntu
+```
+
+### Reiniciar servicios WSL
+```bash
+net stop LxssManager
+net start LxssManager
+```
+
+### Actualizar WSL
+```bash
+wsl --update
+```
+
+### Vaer estado de las distribuciones
+```bash
+wsl --status
+```
+
 
 ## 9. Comandos Después de Instalar WSL Correctamente
 
