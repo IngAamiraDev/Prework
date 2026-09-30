@@ -142,9 +142,33 @@ Ejecútalos siempre en un directorio destino nuevo y vacío, **nunca en la raíz
 
 ## 10. Seguridad
 
-- **Fuga ya presente en el repo, no la propagues:** `aws/cloud/src/lambdas/ext_lambda_was.py:66` contiene una **URL prefirmada de S3 con `X-Amz-Signature`, `X-Amz-Credential` y `X-Amz-Security-Token`** (expiró en 2025, pero el patrón está), y la línea 78 expone el email corporativo `<CORREO_CORPORATIVO_REMOVIDO>`. No copies identifiers de clientes, ARNs de cuenta, emails corporativos ni URLs firmadas a ficheros nuevos, logs o commits. Si amplías el alcance, menciónalo como riesgo en vez de replicarlo.
+- **Ya saneado (rama `feature/audit-secrets`).** `aws/cloud/src/lambdas/ext_lambda_was.py` tuvo una URL prefirmada de S3 con `X-Amz-Security-Token`, un access key temporal `ASIA*` y la firma, más un correo corporativo. Se sustituyeron por `<URL_PRESIGNADA_REMOVIDA>`, `<CORREO_CORPORATIVO_REMOVIDO>`, `<AWS_ACCOUNT_ID>`, `<CENTRO_COSTO_REMOVIDO>`, `<EQUIPO_REMOVIDO>` y `<VPC_ID>`/`<SUBNET_ID>`/`<SECURITY_GROUP_ID>`, y la historia se reescribió sobre los 53 commits. **Ese archivo es una referencia, no una fuente de datos: no lo rellenes con valores reales.**
+- **Lo que sigue en el repo y no debe crecer:** nombres de tablas/buckets de clientes (`mi-tabla-*`, `mi-tabla-*`, `mi-bucket-*`), nombres de perfil SSO (`mi-perfil-*`, `mi-perfil-dev-*`) y la URL de SSO `<ID_INSTANCIA_SSO>.awsapps.com`. Son identificadores, no credenciales, pero acotan qué es la empresa y qué proyectos existen. Si vas a publicar el repo, páralos primero.
 - `config/config.json` commiteado: solo claves de LocalStack `test_*` o cadenas vacías. **Nunca** introduzcas credenciales reales ahí; el README ya dice que se rellenan tras pedir un perfil temporal.
 - Estos scripts manejan datos de clientes reales: nada de volcarlos a logs, outputs de test ni commits.
+- **No vuelvas a escribir rutas con tu nombre ni empresa** (`/mnt/c/<USUARIO>/<EMPRESA>/...`). Las de `aws/localstack/` se enmascararon; no las restaures.
+
+**Si alguna vez debes purgar datos del historial**, el procedimiento que funcionó aquí:
+
+```bash
+# 1. SIEMPRE backup fuera del repo antes de tocar historia
+git clone --mirror /ruta/al/repo /tmp/opencode/backup.git
+
+# 2. Script de reemplazo literal (binarios, para no romper codificacion)
+git filter-branch --tree-filter 'python3 /ruta/scrub.py' --tag-name-filter cat -- --branches
+
+# 3. Las refs de backup de filter-branch mantienen vivo el secreto: borralas
+git for-each-ref --format='%(refname)' refs/original | while read r; do git update-ref -d "$r"; done
+
+# 4. Verificar (git log NO basta: hay que escanear los objetos)
+git reflog expire --expire=now --all && git gc --prune=now
+git cat-file --batch-all-objects --batch | grep -c 'PATRON_SECRETO'
+
+# 5. Force-push y purga final
+git push --force origin trunk && git fetch origin && git reflog expire --expire=now --all && git gc --prune=now
+```
+
+Aviso real de esta operación: hasta que no hagas el force-push (paso 5), `origin/trunk` sigue apuntando a la historia vieja y **los objetos con el secreto siguen vivos en el store local**. Verifícalo siempre con `git cat-file --batch-all-objects`, no solo con `git log`.
 
 ---
 
