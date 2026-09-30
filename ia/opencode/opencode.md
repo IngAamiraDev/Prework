@@ -1,0 +1,4 @@
+
+opencode console login
+
+opencode
