@@ -24,7 +24,7 @@ STRUCTURE = {
     },
     "presentation": {
         "features": {
-            "ingaamira": {
+            "intelligent-invoice-processing": {
                 "components": {},
                 "facades": {},
                 "pages": {},
@@ -45,7 +45,6 @@ COMPONENTS = [
     "navbar",
     "footer",
     "layout",
-    "whatsappbutton"
 ]
 
 
